@@ -1,4 +1,6 @@
-﻿@{
+﻿
+@model UsuarioModel
+@{
     ViewData["Title"] = "Cadastrar usuários";
 }
 
@@ -10,53 +12,30 @@
     
 </div>
 
-<form>
+<form asp-controller="Usuario" asp-action="Criar" method="post">
     <div class="mb-3">
         <label for="nome" class="form-label">Nome</label>
-        <input type="text" class="form-control" placeholder="Digite o seu nome completo">
+        <input type="text" class="form-control" placeholder="Digite o seu nome completo" asp-for="NOME">
     </div>
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email</label>
-        <input type="email" class="form-control" placeholder="Digite o seu e-mail">
+        <input type="email" class="form-control" placeholder="Digite o seu e-mail" asp-for="EMAIL">
     </div>
     <div class="mb-3">
         <label for="CPF" class="form-label">CPF</label>
-        <input type="text" class="form-control" placeholder="Digite o seu cpf">
+        <input type="text" class="form-control" placeholder="Digite o seu cpf" asp-for="CPF">
     </div>
     <div class="mb-3">
         <label for="DataDeNascimento" class="form-label">Data de Nascimento</label>
-        <input type="date" class="form-control" placeholder="Digite a sua data de nascimento">
+        <input type="date" class="form-control" placeholder="Digite a sua data de nascimento" asp-for="NASCIMENTO">
     </div>
     <div class="mb-3">
         <label for="Telefone" class="form-label">Telefone</label>
-        <input type="tel" class="form-control" placeholder="Número de telefone">
+        <input type="tel" class="form-control" placeholder="Número de telefone" asp-for"="TELEFONE">
     </div>
-    <h3>Endereço</h3>
-    <div class="mb-3">
-        <label for="Rua" class="form-label">Rua</label>
-        <input type="text" class="form-control" placeholder="Exemplo: Rua Das Flores Lindas">
 
-        <label for="Numero" class="form-label">Numero da casa</label>
-        <input type="number" class="form-control">
-
-        <label for="CEP" class="form-label">CEP</label>
-        <input type="text" class="form-control">
-
-        <label for="Bairro" class="form-label">Bairro</label>
-        <input type="text" class="form-control">
-
-        <label for="Cidade" class="form-label">Cidade</label>
-        <input type="text" class="form-control">
-
-        <label for="Bairro" class="form-label">Bairro</label>
-        <input type="text" class="form-control">
-
-        <label for="Estado" class="form-label">Estado</label>
-        <input type="text" class="form-control">
-
-        <label for="Pais" class="form-label">Pais</label>
-        <input type="text" class="form-control">
-    </div>
+ 
+    
     <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
     <a role="button" class="btn btn-secondary btn-block" asp-controller="Usuario" asp-action="Index">Voltar</a>
 </form>

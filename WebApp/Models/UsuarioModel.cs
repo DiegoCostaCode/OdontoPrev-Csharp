@@ -1,4 +1,6 @@
-﻿namespace WebApp.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace WebApp.Models
 {
     public class UsuarioModel
     {
@@ -8,10 +10,12 @@
 
         public string TELEFONE { get; set; }
 
-        public DateOnly NASCIMETNO { get; set; }
+        public DateOnly NASCIMENTO { get; set; }
 
         public string EMAIL { get; set; }
 
-        public EnderecoModel ENDERECO_ID { get; set; }
+        [ForeignKey("ENDERECO")]
+        public int? ENDERECO_ID { get; set; }
+        public virtual EnderecoModel ENDERECO { get; set; }
     }
 }

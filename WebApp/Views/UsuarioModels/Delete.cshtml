@@ -1,0 +1,57 @@
+﻿@model WebApp.Models.UsuarioModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>UsuarioModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NOME)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NOME)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CPF)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CPF)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TELEFONE)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TELEFONE)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NASCIMENTO)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NASCIMENTO)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ENDERECO)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ENDERECO.ID)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

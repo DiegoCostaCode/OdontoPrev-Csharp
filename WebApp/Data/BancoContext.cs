@@ -12,5 +12,12 @@ namespace WebApp.Data
 
         public DbSet<UsuarioModel> CH_USUARIO { get; set; }
         public DbSet<EnderecoModel> CH_ENDERECO { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+            modelBuilder.Entity<UsuarioModel>().HasOne(e => e.ENDERECO).WithOne().HasForeignKey<UsuarioModel>(u => u.ENDERECO_ID);
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
